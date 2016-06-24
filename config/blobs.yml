@@ -1,1 +1,25 @@
---- {}
+---
+libsnappy-dev_1.1.0-1ubuntu1_amd64.deb:
+  object_id: a4fad913-5e61-449b-8b1e-4790d9d21329
+  sha: 01bff6712c223d044785f7faef6c32e2a1731b97
+  size: 18008
+libsnappy1_1.1.0-1ubuntu1_amd64.deb:
+  object_id: 80f3e589-d5b8-43e3-b81f-be10cedeb89d
+  sha: 91ecd4736b00cfd64ff3a38bb97c7cae4f597259
+  size: 11152
+dh-autoreconf_9_all.deb:
+  object_id: fe1a1719-f43b-4954-979f-e82a253a3444
+  sha: 6cc4624ac47f369deb00356e902febe4bf167b9b
+  size: 15542
+automake_1.14.1-2ubuntu1_all.deb:
+  object_id: 09aecb2b-ac31-4f95-96ff-6d6604aeb299
+  sha: 415fe3c2973550ec8f38f676d18bf6c31036e78f
+  size: 510410
+libtool_2.4.2-1.7ubuntu1_amd64.deb:
+  object_id: efbec18b-7932-47dd-9608-9fe29b30180c
+  sha: cdf5bed4a8d51682bdff133445ed770ed65f31f5
+  size: 187970
+autotools-dev_20130810.1_all.deb:
+  object_id: fec47ada-fc0e-41b1-8d8e-8b6b6ee1c182
+  sha: 3b38cc37ffe713ad76f54607bb85ffa8bd4863e6
+  size: 44326

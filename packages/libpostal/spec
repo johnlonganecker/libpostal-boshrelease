@@ -1,0 +1,13 @@
+---
+name: libpostal
+dependencies: []
+files:
+  - libpostal/**/*
+  - libsnappy-dev_1.1.0-1ubuntu1_amd64.deb
+  - libsnappy1_1.1.0-1ubuntu1_amd64.deb
+  - dh-autoreconf_9_all.deb
+  - libtool_2.4.2-1.7ubuntu1_amd64.deb
+  - automake_1.14.1-2ubuntu1_all.deb
+  - autotools-dev_20130810.1_all.deb
+  - autoconf_2.69-6_all.deb
+  - autopoint_0.18.3.1-1ubuntu2_all.deb

@@ -1,0 +1,62 @@
+set -e # exit immediately if a simple command exits with a non-zero status
+set -u # report the usage of uninitialized variables
+
+# Detect # of CPUs so make jobs can be parallelized
+CPUS=$(grep -c ^processor /proc/cpuinfo)
+ # Available variables
+# $BOSH_COMPILE_TARGET - where this package & spec'd source files are available
+# $BOSH_INSTALL_TARGET - where you copy/install files to be included in package
+export HOME=/var/vcap
+
+# sudo apt-get update
+# sudo apt-get upgrade -y
+# sudo apt-get install -y libsnappy-dev autoconf automake libtool git
+
+#dpkg -i autotools-dev_20130810.1_all.deb
+#dpkg -i libtool_2.4.2-1.7ubuntu1_amd64.deb
+#dpkg -i autoconf_2.69-6_all.deb
+#dpkg -i automake_1.14.1-2ubuntu1_all.deb
+#dpkg -i autopoint_0.18.3.1-1ubuntu2_all.deb
+#dpkg -i dh-autoreconf_9_all.deb
+#dpkg -i libsnappy1_1.1.0-1ubuntu1_amd64.deb
+#dpkg -i libsnappy-dev_1.1.0-1ubuntu1_amd64.deb
+
+#cd libpostal
+#./bootstrap.sh
+#./configure --datadir=$BOSH_INSTALL_TARGET/data-libpostal
+
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt-get install -y libsnappy-dev autoconf automake libtool git
+
+git clone https://github.com/openvenues/libpostal alright
+cd alright
+./bootstrap.sh
+./configure --datadir=$BOSH_INSTALL_TARGET/data-libpostal
+make
+sudo make install
+
+mkdir $BOSH_INSTALL_TARGET/include
+mkdir $BOSH_INSTALL_TARGET/lib
+
+cp /usr/local/include/libpostal/libpostal.h $BOSH_INSTALL_TARGET/include
+cp /usr/local/lib/libpostal.a $BOSH_INSTALL_TARGET/lib
+cp /usr/local/lib/libpostal.la $BOSH_INSTALL_TARGET/lib
+cp /usr/local/lib/libpostal.so.0.0.0 $BOSH_INSTALL_TARGET/lib
+
+#ln -s libpostal.so.0.0.0 libpostal.so
+#ln -s libpostal.so.0.0.0 libpostal.so.0
+
+sudo ldconfig
+
+sudo apt-get install -y python python-dev python-setuptools python-pip
+sudo pip install git+https://github.com/openvenues/pypostal.git
+sudo pip install "ipython[notebook]"
+
+
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get update
+sudo apt-get install -y nodejs
+sudo apt-get install -y build-essential
+sudo npm install -g node-gyp
+

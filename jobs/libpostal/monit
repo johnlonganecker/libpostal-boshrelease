@@ -1,0 +1,5 @@
+check process libpostal
+  with pidfile /var/vcap/sys/run/libpostal/libpostal.pid
+  start program "/var/vcap/jobs/libpostal/bin/monit_debugger libpostal_ctl '/var/vcap/jobs/libpostal/bin/ctl start'"
+  stop program "/var/vcap/jobs/libpostal/bin/monit_debugger libpostal_ctl '/var/vcap/jobs/libpostal/bin/ctl stop'"
+  group vcap
