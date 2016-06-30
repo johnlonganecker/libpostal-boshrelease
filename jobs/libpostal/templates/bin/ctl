@@ -14,6 +14,22 @@ case $1 in
   start)
     pid_guard $PIDFILE $JOB_NAME
 
+    mkdir -p /usr/local/include/libpostal
+    cp /var/vcap/jobs/libpostal/packages/libpostal/include/libpostal.h /usr/local/include/libposta/libpostal.h
+
+    cp /var/vcap/jobs/libpostal/packages/libpostal/lib/libpostal.a /ust/local/lib/libpostal.a
+    cp /var/vcap/jobs/libpostal/packages/libpostal/lib/libpostal.la /usr/local/lib/libpostal.la
+    cp /var/vcap/jobs/libpostal/packages/libpostal/lib/libpostal.so.0.0.0 /usr/local/lib/libpostal.so.0.0.0
+
+    # cp /var/vcap/jobs/libpostal/pkgconfig/libpostal.pc /usr/lib/pkgconfig/libpostal.pc
+
+    cd /usr/local/lib/
+
+    ln -s libpostal.so.0.0.0 libpostal.so
+    ln -s libpostal.so.0.0.0 libpostal.so.0
+
+    ldconfig
+
     # store pid in $PIDFILE
     echo $$ > $PIDFILE
 
