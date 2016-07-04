@@ -23,3 +23,15 @@ autotools-dev_20130810.1_all.deb:
   object_id: fec47ada-fc0e-41b1-8d8e-8b6b6ee1c182
   sha: 3b38cc37ffe713ad76f54607bb85ffa8bd4863e6
   size: 44326
+autoconf_2.69-6_all.deb:
+  object_id: 5019e470-9491-4e1a-813a-71d4ead979ed
+  sha: 117ef68b22eb4f84cd2ac1e3a42bfe4d3825869c
+  size: 322180
+autopoint_0.18.3.1-1ubuntu2_all.deb:
+  object_id: 7f40f356-fec4-4118-b56e-390baf6232dd
+  sha: 8f0142dd47093d0a883939bdcbf3546979fd4edf
+  size: 369022
+golang/go1.6.2.linux-amd64.tar:
+  object_id: d72f9abb-0b5d-4ece-bfab-e932d042c26c
+  sha: 3f606839e753ba761b08be261a1998d9546de431
+  size: 323059712
