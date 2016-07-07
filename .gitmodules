@@ -1,3 +1,6 @@
 [submodule "src/libpostal"]
 	path = src/libpostal
 	url = https://github.com/openvenues/libpostal.git
+[submodule "src/libpostal-rest"]
+	path = src/libpostal-rest
+	url = https://github.com/johnlonganecker/libpostal-rest.git
