@@ -1,0 +1,6 @@
+---
+name: libpostal-rest
+dependencies:
+- golang
+files:
+  - golang/**/*
