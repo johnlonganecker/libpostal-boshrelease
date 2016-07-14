@@ -9,9 +9,9 @@ update:
   serial: false
 
 jobs:
-  - name: libpostal
+  - name: libpostal-rest
     templates:
-    - name: libpostal
+    - name: libpostal-rest
       release: libpostal
     instances: 1
     persistent_disk: 0

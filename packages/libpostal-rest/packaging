@@ -1,6 +1,33 @@
 #!/usr/bin/env bash
 set -e -x
 
+apt-get update -y
+apt-get install -y git pkg-config
+
+dpkg -i autotools-dev_20130810.1_all.deb
+dpkg -i libtool_2.4.2-1.7ubuntu1_amd64.deb
+dpkg -i autoconf_2.69-6_all.deb
+dpkg -i automake_1.14.1-2ubuntu1_all.deb
+dpkg -i autopoint_0.18.3.1-1ubuntu2_all.deb
+dpkg -i dh-autoreconf_9_all.deb
+dpkg -i libsnappy1_1.1.0-1ubuntu1_amd64.deb
+dpkg -i libsnappy-dev_1.1.0-1ubuntu1_amd64.deb
+
+mkdir -p /usr/local/include/libpostal
+mkdir -p /usr/local/lib/pkgconfig
+
+# get libpostal 
+cp /var/vcap/packages/libpostal/include/libpostal.h /usr/local/include/libpostal/libpostal.h
+cp /var/vcap/packages/libpostal/lib/libpostal.a /usr/local/lib/libpostal.a
+cp /var/vcap/packages/libpostal/lib/libpostal.la /usr/local/lib/libpostal.la
+cp /var/vcap/packages/libpostal/lib/libpostal.so.0.0.0 /usr/local/lib/libpostal.so.0.0.0
+cp /var/vcap/packages/libpostal/pkgconfig/libpostal.pc /usr/local/lib/pkgconfig/libpostal.pc
+
+# ln -s /usr/local/lib/libpostal.so.0.0.0 /usr/local/lib/libpostal.so
+ln -s /usr/local/lib/libpostal.so.0.0.0 /usr/local/lib/libpostal.so.0
+
+ldconfig
+
 REPO_NAME=github.com/johnlonganecker/libpostal-rest
 
 REPO_DIR=${BOSH_INSTALL_TARGET}/src/${REPO_NAME}
@@ -14,6 +41,9 @@ export GOPATH=$BOSH_INSTALL_TARGET:${REPO_DIR}/Godeps/_workspace
 export PATH=$GOROOT/bin:$PATH
 
 pushd $REPO_DIR
+go get github.com/gorilla/mux
+go get github.com/openvenues/gopostal/expand
+go get github.com/openvenues/gopostal/parser
 go build -o libpostal-rest main.go
 mkdir ${BOSH_INSTALL_TARGET}/bin
 cp -a libpostal-rest ${BOSH_INSTALL_TARGET}/bin

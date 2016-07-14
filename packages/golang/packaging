@@ -8,5 +8,5 @@ CPUS=$(grep -c ^processor /proc/cpuinfo)
 # $BOSH_INSTALL_TARGET - where you copy/install files to be included in package
 export HOME=/var/vcap
 
-tar xzf golang/go1.6.2.linux-amd64.tar
+tar xzf golang/go1.6.2.linux-amd64.tar.gz
 cp -R go/* ${BOSH_INSTALL_TARGET} 

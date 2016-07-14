@@ -31,7 +31,7 @@ autopoint_0.18.3.1-1ubuntu2_all.deb:
   object_id: 7f40f356-fec4-4118-b56e-390baf6232dd
   sha: 8f0142dd47093d0a883939bdcbf3546979fd4edf
   size: 369022
-golang/go1.6.2.linux-amd64.tar:
-  object_id: d72f9abb-0b5d-4ece-bfab-e932d042c26c
-  sha: 3f606839e753ba761b08be261a1998d9546de431
-  size: 323059712
+golang/go1.6.2.linux-amd64.tar.gz:
+  object_id: 824a473e-2af9-433c-907b-cb23b36586b7
+  sha: b8318b09de06076d5397e6ec18ebef3b45cd315d
+  size: 84840658

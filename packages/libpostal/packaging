@@ -37,7 +37,7 @@ cp /usr/local/lib/libpostal.la $BOSH_INSTALL_TARGET/lib
 cp /usr/local/lib/libpostal.so.0.0.0 $BOSH_INSTALL_TARGET/lib
 
 mkdir -p $BOSH_INSTALL_TARGET/pkgconfig
-# cp /vagrant/libpostal/libpostal/libpostal.pc $BOSH_INSTALL_TARGET/pkgconfig/libpostal.pc
+cp /usr/local/lib/pkgconfig/libpostal.pc $BOSH_INSTALL_TARGET/pkgconfig/libpostal.pc
 
 #sudo apt-get update
 #sudo apt-get upgrade -y
